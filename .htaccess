@@ -1,0 +1,43 @@
+# CamsTube Apache Configuration
+
+# Enable rewrite engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Serve sitemap.xml via PHP
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+    # Block direct access to includes
+    RewriteRule ^includes/ - [F,L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Caching for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# PHP settings (if applicable)
+<IfModule mod_php.c>
+    php_value max_execution_time 30
+    php_value memory_limit 64M
+</IfModule>
