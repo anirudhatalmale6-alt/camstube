@@ -49,12 +49,9 @@ $headExtra = videoSchemaMarkup($video);
 require_once __DIR__ . '/includes/header.php';
 ?>
 
-<!-- HilltopAds: Above Player Ad -->
+<!-- HilltopAds: Above Player -->
 <div class="ad-spot ad-video-top">
-    <div class="ad-placeholder">
-        <!-- HilltopAds: Insert above-player ad code here (728x90 or responsive) -->
-        <span>Ad Above Player</span>
-    </div>
+    <script type="text/javascript" src="https://hurtfulcell.com/act/files/tag.min.js?z=8499817" data-cfasync="false" async></script>
 </div>
 
 <div class="content-layout">
@@ -62,36 +59,33 @@ require_once __DIR__ . '/includes/header.php';
         <!-- Video Player -->
         <div class="video-player-wrap">
             <div class="player-container">
-                <div id="camstube-player">
-                    <?php
-                    // Embed the player using playerEmbedScript
-                    if (!empty($video['playerEmbedScript'])) {
-                        // Replace {CONTAINER} placeholder with our div ID
+                <div id="camstube-player" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <?php if (!empty($video['playerEmbedScript'])): ?>
+                        <?php
+                        // Embed script inside the container div - replace {CONTAINER} with our div ID
                         $embedScript = $video['playerEmbedScript'];
                         $embedScript = str_replace('{CONTAINER}', 'camstube-player', $embedScript);
-                        // Fix protocol-relative URLs in script src
                         $embedScript = str_replace('src="//', 'src="https://', $embedScript);
                         echo $embedScript;
-                    } elseif (!empty($video['playerEmbedUrl'])) {
-                        // Fallback: use iframe with playerEmbedUrl
+                        ?>
+                    <?php elseif (!empty($video['playerEmbedUrl'])): ?>
+                        <?php
                         $embedUrl = $video['playerEmbedUrl'];
                         if (strpos($embedUrl, '//') === 0) $embedUrl = 'https:' . $embedUrl;
-                        echo '<iframe src="' . e($embedUrl) . '" width="100%" height="100%" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>';
-                    } else {
-                        // Final fallback: show cover image with link
-                        echo '<a href="' . e($targetUrl) . '" target="_blank" rel="noopener" style="display:block;width:100%;height:100%;background:url(' . e($coverImage) . ') center/cover no-repeat;"></a>';
-                    }
-                    ?>
+                        $embedUrl = str_replace('{CONTAINER}', 'camstube-player', $embedUrl);
+                        ?>
+                        <iframe src="<?= e($embedUrl) ?>" width="100%" height="100%" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;"></iframe>
+                    <?php else: ?>
+                        <!-- Fallback: cover image with link -->
+                        <a href="<?= e($targetUrl) ?>" target="_blank" rel="noopener" style="display:block;width:100%;height:100%;background:url(<?= e($coverImage) ?>) center/cover no-repeat;"></a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
 
-        <!-- HilltopAds: Below Player Ad -->
+        <!-- HilltopAds: Below Player -->
         <div class="ad-spot ad-video-bottom">
-            <div class="ad-placeholder">
-                <!-- HilltopAds: Insert below-player ad code here (728x90 or responsive) -->
-                <span>Ad Below Player</span>
-            </div>
+            <script type="text/javascript" src="https://hurtfulcell.com/act/files/tag.min.js?z=8499817" data-cfasync="false" async></script>
         </div>
 
         <!-- Video Info -->

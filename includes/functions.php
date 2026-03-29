@@ -363,12 +363,9 @@ function renderSidebar(): string {
 
     return <<<HTML
     <aside class="sidebar">
-        <!-- HilltopAds 300x250 Sidebar Rectangle -->
+        <!-- HilltopAds Sidebar -->
         <div class="ad-spot ad-300x250">
-            <div class="ad-placeholder">
-                <!-- HilltopAds: Insert 300x250 ad code here -->
-                <span>Ad 300x250</span>
-            </div>
+            <script type="text/javascript" src="https://hurtfulcell.com/act/files/tag.min.js?z=8499817" data-cfasync="false" async></script>
         </div>
 
         <!-- PornMayer Network Banner -->
@@ -389,12 +386,9 @@ function renderSidebar(): string {
             </div>
         </div>
 
-        <!-- HilltopAds 300x250 Sidebar Rectangle #2 -->
+        <!-- HilltopAds Sidebar #2 -->
         <div class="ad-spot ad-300x250">
-            <div class="ad-placeholder">
-                <!-- HilltopAds: Insert 300x250 ad code here -->
-                <span>Ad 300x250</span>
-            </div>
+            <script type="text/javascript" src="https://hurtfulcell.com/act/files/tag.min.js?z=8499817" data-cfasync="false" async></script>
         </div>
     </aside>
 HTML;

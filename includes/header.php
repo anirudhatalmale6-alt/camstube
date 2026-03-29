@@ -24,19 +24,13 @@ $currentNav = $currentNav ?? 'home';
 </head>
 <body>
 
-<!-- HilltopAds Popunder Placeholder -->
-<!-- <script>
-    // HilltopAds: Insert popunder ad code here
-    // Example: var _pop = {"zoneId": "YOUR_ZONE_ID"};
-</script> -->
+<!-- HilltopAds Popunder -->
+<script type="text/javascript" src="https://questionablenet.com/act/files/tag.min.js?z=8499811" data-cfasync="false" async></script>
 
 <header class="site-header">
-    <!-- HilltopAds 728x90 Header Leaderboard -->
+    <!-- HilltopAds Header Slide -->
     <div class="ad-spot ad-leaderboard">
-        <div class="ad-placeholder">
-            <!-- HilltopAds: Insert 728x90 leaderboard ad code here -->
-            <span>Ad 728x90</span>
-        </div>
+        <script type="text/javascript" src="https://hurtfulcell.com/act/files/tag.min.js?z=8499817" data-cfasync="false" async></script>
     </div>
 
     <nav class="navbar">

@@ -73,10 +73,7 @@ $videos = fetchVideos($apiParams);
                 <?php if (($index + 1) % 8 === 0 && $index + 1 < count($videos)): ?>
                 <div class="ad-infeed-row">
                     <div class="ad-spot ad-infeed">
-                        <div class="ad-placeholder">
-                            <!-- HilltopAds: Insert native/in-feed ad code here -->
-                            <span>Native In-Feed Ad</span>
-                        </div>
+                        <script type="text/javascript" src="https://hurtfulcell.com/act/files/tag.min.js?z=8499817" data-cfasync="false" async></script>
                     </div>
                 </div>
                 <?php endif; ?>

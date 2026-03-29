@@ -3,10 +3,7 @@
 
 <!-- HilltopAds Footer Banner -->
 <div class="ad-spot ad-footer-banner">
-    <div class="ad-placeholder">
-        <!-- HilltopAds: Insert footer banner ad code here (728x90 or responsive) -->
-        <span>Ad Footer Banner</span>
-    </div>
+    <script type="text/javascript" src="https://hurtfulcell.com/act/files/tag.min.js?z=8499817" data-cfasync="false" async></script>
 </div>
 
 <footer class="site-footer">
